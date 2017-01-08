@@ -12,7 +12,8 @@
         $scope.verifyItemCount = function(){            
             var lunchItems = $scope.lunchMenu.split(',');
             for(var indx = lunchItems.length-1; indx >= 0 ; indx--){
-                if(lunchItems[indx].trim() == ""){
+                var elem = lunchItems[indx].trim()
+                if(elem == "" || elem == "\"\"" || elem == "''"){
                     lunchItems.splice(indx, 1);
                 }
             }
